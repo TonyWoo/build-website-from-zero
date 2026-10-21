@@ -34,3 +34,4 @@ sidebar:
 - [第 16 章 认识 DeepSeek：用 AI 当陪练](./deepseek-companion/)
 - [第 17 章 AI 编程代理实战：DeepSeek Harness 与 WorkBuddy](./ai-agents/)
 - [第 18 章 毕业作品：把你的网站发布到全世界](./launch/)
+- [第 19 章 后端入门：让网站记住每一位访客](./backend/)

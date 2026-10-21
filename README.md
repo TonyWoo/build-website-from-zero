@@ -14,7 +14,7 @@ DeepSeek Harness 与腾讯 WorkBuddy 这些 AI 编程助手，并把自己的网
 学完这本书，手里就有一个真正属于自己的网站。
 （案例人物为虚构，代码与方法都是真实可用的。）
 
-## 章节大纲（前言 + 18 章）
+## 章节大纲（前言 + 19 章）
 
 | 章 | 目录 | 主题 |
 |---|---|---|
@@ -37,6 +37,7 @@ DeepSeek Harness 与腾讯 WorkBuddy 这些 AI 编程助手，并把自己的网
 | 16 | `content/zh/160-deepseek-companion/` | 认识 DeepSeek：用 AI 当陪练 |
 | 17 | `content/zh/170-ai-agents/` | AI 编程代理实战：DeepSeek Harness 与 WorkBuddy |
 | 18 | `content/zh/180-launch/` | 毕业作品：把你的网站发布到全世界 |
+| 19 | `content/zh/190-backend/` | 后端入门：让网站记住每一位访客 |
 
 每章体例：白话讲解 + 可运行的代码示例 + 贯穿作品推进 + 本章要点 + 动手 Kata + 翻车现场。
 全书写作规范与案例口径见 `WRITING.md`。

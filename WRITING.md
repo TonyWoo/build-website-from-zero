@@ -59,6 +59,9 @@
   排版好的网页文档
 - 第 18 章：部署上线——GitHub Pages 发静态版、Vercel 发 React 版，
   拿到全世界都能打开的网址
+- 第 19 章（进阶篇）：给网站加上 Node.js 后端 + PostgreSQL 数据库，
+  第 17 章的留言板变成真的：注册、登录、留言都存进数据库，所有人看到同一份留言；
+  同时认识 MySQL。后端在本机运行，部署只点到为止（后端需要一台一直开着的服务器）
 
 **口径声明**（写在前言里）：小北是虚构人物；书中代码都是真实可运行的，
 网址、接口等操作步骤按真实产品写，读者照着做能得到相同结果。
@@ -214,3 +217,11 @@
   18.3 Vercel：现代前端的部署方式
   18.4 整理作品集：让网站替你说话
   18.5 下一步学习地图：前端之后往哪走
+- 第 19 章 `190-backend`，title：`第 19 章 后端入门：让网站记住每一位访客`
+  19.1 为什么需要后端：前端管不到的三件事（数据要共享、秘密不能放前端、换台设备数据还在）
+  19.2 认识数据库：PostgreSQL 上手（安装、数据库/表/行/列、建库建表、INSERT 与 SELECT）
+  19.3 第一个后端：用 Node.js + Express 写接口（npm init、express、GET /api/messages 返回 JSON、前后端怎么分工）
+  19.4 注册与登录：密码不能明文存（users 表、Node 内置 crypto 的 scrypt 加盐哈希、注册/登录接口、会话 Cookie 与登录状态）
+  19.5 贯穿作品：留言板变成真的（messages 表、发表留言接口要先登录、前端 fetch 对接、参数化查询防注入）
+  19.6 也认识一下 MySQL（它是谁、和 PostgreSQL 的相同与不同、方言对照：$1 与 ?、IDENTITY 与 AUTO_INCREMENT、Node 换 mysql2 的差别、怎么选）
+  技术口径（第 19 章专用）：依赖只装 express 与 pg 两件；密码哈希用 Node 内置 crypto.scrypt（加盐、timingSafeEqual 比对），会话用 crypto.randomUUID 生成 token 存内存 Map + httpOnly Cookie（并说明真实项目常用现成 session 方案、原理相同）；PostgreSQL 默认端口 5432、MySQL 3306；SQL 一律参数化查询；版本号等易变细节写"以官方文档为准"，不编造。
