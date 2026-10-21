@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "base": "/build-website-from-zero/",
+  "knownRoutes": [
+    "/",
+    "/404",
+    "/ai-agents",
+    "/css-advanced",
+    "/css-basics",
+    "/css-layout",
+    "/deepseek-companion",
+    "/git",
+    "/html-advanced",
+    "/html-basics",
+    "/js-advanced",
+    "/js-basics",
+    "/js-dom",
+    "/js-logic",
+    "/launch",
+    "/meet-web",
+    "/preface",
+    "/react-practice",
+    "/react-thinking",
+    "/tailwind",
+    "/tools"
+  ],
+  "opaqueNamespaces": []
+}
