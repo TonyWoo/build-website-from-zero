@@ -149,3 +149,9 @@ Vercel 最舒服的地方是**自动部署**：从此你每次 `git push`，它�
 改法很直接：把 `website` 文件夹里的文件全部移到仓库根目录（让打开仓库首页就能直接看到 `index.html`），提交、推送，等一分钟再刷新 Pages 设置页，网址就活过来了。
 
 顺带记住一个孪生小坑：改完代码忘了 `git push`，线上就还是旧版本——自动部署再聪明，也部署不了还没上传的代码。发现"线上怎么没变"时，先检查自己推没推，再怀疑平台。
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch18" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>

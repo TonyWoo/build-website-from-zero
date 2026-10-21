@@ -258,3 +258,5 @@ console.log(average(80, 90));
 ```
 
 函数里算出了 `result`，却没用 `return` 把它交出来，函数默认返回 `undefined`。补上 `return result;`，输出立刻变成 `85`。**函数算完不 return，等于外卖做好了却不给骑手。**
+
+<!-- playground: ch09 -->

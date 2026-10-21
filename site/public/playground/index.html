@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在线试玩 · 《从零开始学习建网站》</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; display: flex; flex-direction: column;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f7faff; color: #1e293b;
+  }
+  header {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 8px 12px; background: #ffffff; border-bottom: 1px solid #dbe4f0;
+  }
+  header .badge {
+    background: #2563eb; color: #fff; font-size: 12px; font-weight: 700;
+    padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  header h1 { font-size: 15px; margin: 0; font-weight: 700; }
+  header .note { font-size: 12.5px; color: #64748b; flex-basis: 100%; }
+  header .spacer { flex: 1; }
+  button {
+    font: inherit; font-size: 13px; cursor: pointer;
+    border: 1px solid #c7d6ee; background: #fff; color: #1d4ed8;
+    padding: 5px 12px; border-radius: 8px; white-space: nowrap;
+  }
+  button:hover { background: #eff6ff; }
+  button.primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+  button.primary:hover { background: #1d4ed8; }
+  main { flex: 1; display: flex; min-height: 0; }
+  .pane { display: flex; flex-direction: column; min-width: 0; }
+  .pane.editor { flex: 1.05; border-right: 1px solid #dbe4f0; }
+  .pane.preview { flex: 1; background: #fff; }
+  .pane .cap {
+    font-size: 12px; color: #64748b; padding: 6px 12px;
+    background: #eef4fd; border-bottom: 1px solid #dbe4f0;
+    display: flex; justify-content: space-between; gap: 8px;
+  }
+  textarea {
+    flex: 1; width: 100%; resize: none; border: 0; outline: none;
+    padding: 12px 14px; background: #0d1526; color: #dbeafe;
+    font-family: "JetBrains Mono", Consolas, Menlo, monospace;
+    font-size: 13.5px; line-height: 1.65; tab-size: 2;
+  }
+  iframe { flex: 1; width: 100%; border: 0; background: #fff; }
+  #console {
+    flex: 1; overflow: auto; padding: 12px 14px; display: none;
+    background: #0d1526; color: #dbeafe;
+    font-family: "JetBrains Mono", Consolas, Menlo, monospace;
+    font-size: 13.5px; line-height: 1.7; white-space: pre-wrap; word-break: break-word;
+  }
+  #console .err { color: #fca5a5; }
+  #console .warn { color: #fcd34d; }
+  #console .dim { color: #7d8aa5; }
+  .errbox {
+    margin: 10px; padding: 10px 12px; border: 1px solid #fecaca;
+    background: #fef2f2; color: #b91c1c; border-radius: 8px;
+    font-size: 13px; white-space: pre-wrap; display: none;
+  }
+  @media (max-width: 720px) {
+    main { flex-direction: column; }
+    .pane.editor { border-right: 0; border-bottom: 1px solid #dbe4f0; flex: 1; }
+    .pane.preview { flex: 1.2; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <span class="badge">在线试玩</span>
+  <h1 id="title">加载中…</h1>
+  <span class="spacer"></span>
+  <button id="btn-open" type="button" title="在新标签页里打开这个试玩框">⤢ 大窗口打开</button>
+  <button id="btn-reset" type="button" title="把代码恢复成本章最初的样子">⟲ 重置代码</button>
+  <button id="btn-run" type="button" class="primary" title="重新运行右边的预览">▶ 运行</button>
+  <div class="note" id="note" hidden></div>
+</header>
+<main>
+  <section class="pane editor">
+    <div class="cap"><span>代码（可以直接改，改完右边自动更新）</span><span id="fname"></span></div>
+    <textarea id="code" spellcheck="false" aria-label="代码编辑区"></textarea>
+  </section>
+  <section class="pane preview">
+    <div class="cap"><span id="preview-cap">预览效果</span><span>改坏了不怕，点「重置代码」</span></div>
+    <div class="errbox" id="errbox"></div>
+    <iframe id="preview" title="预览" sandbox="allow-scripts allow-forms allow-modals allow-popups allow-same-origin"></iframe>
+    <div id="console" aria-label="控制台输出"></div>
+  </section>
+</main>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var snap = (params.get('snap') || '').replace(/[^\w-]/g, '');
+  var codeEl = document.getElementById('code');
+  var frame = document.getElementById('preview');
+  var consoleEl = document.getElementById('console');
+  var errbox = document.getElementById('errbox');
+  var titleEl = document.getElementById('title');
+  var noteEl = document.getElementById('note');
+  var fnameEl = document.getElementById('fname');
+  var original = '';
+  var meta = { type: 'html', title: '', note: '' };
+  var vendorBase = new URL('vendor/', location.href).href;
+
+  function parseMeta(text) {
+    var m = text.match(/<!--snap\s+([\s\S]*?)-->/);
+    if (!m) return;
+    var attrs = m[1];
+    var get = function (k) {
+      var mm = attrs.match(new RegExp(k + '="([^"]*)"'));
+      return mm ? mm[1] : '';
+    };
+    meta.type = get('type') || 'html';
+    meta.title = get('title');
+    meta.note = get('note');
+  }
+
+  function errorTrap() {
+    return '<script>window.addEventListener("error",function(e){' +
+      'var d=document.createElement("div");' +
+      'd.style.cssText="margin:10px;padding:10px 12px;border:1px solid #fecaca;background:#fef2f2;color:#b91c1c;border-radius:8px;font:13px sans-serif;white-space:pre-wrap";' +
+      'd.textContent="页面报错啦：" + (e.message || e.error);' +
+      'document.body && document.body.prepend(d);});<\/script>';
+  }
+
+  function assemble(code) {
+    if (meta.type === 'react' || meta.type === 'react-tailwind') {
+      var tw = meta.type === 'react-tailwind'
+        ? '<script src="' + vendorBase + 'tailwind.js"><\/script>' : '';
+      return '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">' +
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+        '<script src="' + vendorBase + 'react.min.js"><\/script>' +
+        '<script src="' + vendorBase + 'react-dom.min.js"><\/script>' +
+        '<script src="' + vendorBase + 'babel.min.js"><\/script>' + tw +
+        '</head><body><div id="root"></div>' + errorTrap() +
+        '<script type="text/babel" data-presets="react">' +
+        code.replace(/<!--snap[\s\S]*?-->/, '') +
+        '<\/script></body></html>';
+    }
+    return code;
+  }
+
+  function fmt(v) {
+    if (typeof v === 'string') return v;
+    if (v === undefined) return 'undefined';
+    try { return JSON.stringify(v, null, 2); } catch (e) { return String(v); }
+  }
+
+  function runJs(code) {
+    consoleEl.textContent = '';
+    var lines = [];
+    var fake = {};
+    ['log', 'info', 'warn', 'error'].forEach(function (lv) {
+      fake[lv] = function () {
+        var div = document.createElement('div');
+        if (lv === 'error') div.className = 'err';
+        if (lv === 'warn') div.className = 'warn';
+        div.textContent = Array.prototype.map.call(arguments, fmt).join(' ');
+        consoleEl.appendChild(div);
+      };
+    });
+    try {
+      new Function('console', code.replace(/<!--snap[\s\S]*?-->/, ''))(fake);
+    } catch (e) {
+      var div = document.createElement('div');
+      div.className = 'err';
+      div.textContent = '报错啦：' + e.message;
+      consoleEl.appendChild(div);
+    }
+    if (!consoleEl.childNodes.length) {
+      var dim = document.createElement('div');
+      dim.className = 'dim';
+      dim.textContent = '（没有输出。用 console.log("你好") 试试把结果打印出来）';
+      consoleEl.appendChild(dim);
+    }
+  }
+
+  function run() {
+    errbox.style.display = 'none';
+    var code = codeEl.value;
+    if (meta.type === 'js') { runJs(code); return; }
+    frame.srcdoc = assemble(code);
+  }
+
+  var timer = null;
+  codeEl.addEventListener('input', function () {
+    clearTimeout(timer);
+    timer = setTimeout(run, 550);
+  });
+  codeEl.addEventListener('keydown', function (e) {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      var s = codeEl.selectionStart;
+      codeEl.setRangeText('  ', s, codeEl.selectionEnd, 'end');
+      codeEl.dispatchEvent(new Event('input'));
+    }
+  });
+  document.getElementById('btn-run').addEventListener('click', run);
+  document.getElementById('btn-reset').addEventListener('click', function () {
+    codeEl.value = original;
+    run();
+  });
+  document.getElementById('btn-open').addEventListener('click', function () {
+    window.open(location.href, '_blank');
+  });
+
+  if (!snap) {
+    titleEl.textContent = '没有指定要试玩的内容';
+    return;
+  }
+  fetch(new URL('../playgrounds/' + snap + '.html', location.href))
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+    .then(function (text) {
+      parseMeta(text);
+      original = text.replace(/<!--snap[\s\S]*?-->\s*/, '');
+      codeEl.value = original;
+      titleEl.textContent = meta.title || '在线试玩';
+      fnameEl.textContent = snap + (meta.type === 'js' ? '.js' : '.html');
+      if (meta.note) { noteEl.textContent = meta.note; noteEl.hidden = false; }
+      if (meta.type === 'js') {
+        frame.style.display = 'none';
+        consoleEl.style.display = 'block';
+        document.getElementById('preview-cap').textContent = '控制台输出';
+      }
+      run();
+    })
+    .catch(function (e) {
+      titleEl.textContent = '加载失败';
+      errbox.style.display = 'block';
+      errbox.textContent = '试玩内容没加载出来（' + e.message + '），请检查网络后刷新页面。';
+    });
+})();
+</script>
+</body>
+</html>

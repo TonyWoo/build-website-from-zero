@@ -223,3 +223,9 @@ form.addEventListener('submit', function (event) {
 原因正是 10.5 预告过的：浏览器读到 `<head>` 里的脚本时，`<body>` 里的表单还没被读到，DOM 树上根本没有这个元素，`querySelector` 只好交回 `null`；代码接着对 `null` 调用 `addEventListener`，当场报错，整段脚本停摆——后面的监听一个都没登记上，按钮当然怎么点都没反应。
 
 改法只有一个动作：把 `<script>` 挪回 `</body>` 之前，一切恢复正常。记住这条经验：**看到 `Cannot read properties of null`，先想"是不是元素还没出现，或者没找到"，再去查选择器的拼写。**
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch10" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>

@@ -252,3 +252,9 @@ console.log(saved); // ["背单词", "去拍照片"]
 第二个坑在待办清单。他想当然地写了 `localStorage.setItem("todos", todos)`，没打包直接存。刷新后一读，数组不见了，只剩一行怪字符串。铁规矩摆在那儿：localStorage 只收字符串，硬塞数组，它就把数组"压扁"成字符串，对象更会被压成没法用的 `[object Object]`。改法没有第二种：**存之前 `JSON.stringify` 打包，取之后 `JSON.parse` 拆包**，一个字都不能省。
 
 两个坑是同一个教训：异步和存储都有规矩，"差不多"的写法差一个词就全盘不对。报错不可怕，它是在提醒你：有规矩没对上。
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch11" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>

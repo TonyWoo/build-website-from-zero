@@ -219,3 +219,5 @@ npm run dev
 保存之后，页面直接白屏，浏览器控制台（按 F12 打开）里躺着两条刺眼的红字。一条是警告：`Warning: Invalid DOM property 'class'. Did you mean 'className'?`——React 在提醒他，JSX 里的类名要写 `className`。另一条更严重，是直接让页面崩掉的报错：`Unterminated JSX contents`，意思是"JSX 标签没写完"。他盯着代码看了半天才发现：`<img>` 后面少了那个 `/`。
 
 这两个坑，几乎每个 React 新手都会各踩一遍，报错信息其实都把答案写在脸上了。改法就是 13.3 的三条规矩：类名写 `className`；`<img>`、`<br>` 这类单标签末尾加 `/>`。记住：**白屏先别慌，打开控制台看红字，它通常直接告诉你错在哪一行、错在哪。**
+
+<!-- playground: ch13 -->

@@ -264,3 +264,9 @@ Tailwind 类名多到吓人，但日常高频的就几组。先讲清一个规�
 3. 接入没问题、只有个别类不生效，再查拼写：单词、色阶数字、冒号后有没有空格。
 
 养成这个顺序，"样式怎么没了"的排查时间能从半小时降到两分钟。
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch15" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>

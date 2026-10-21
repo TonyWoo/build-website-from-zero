@@ -306,3 +306,9 @@ git push -u origin main
 这次翻车错在两处。第一，**动手大改之前没先存档**——存档点之间隔得越久，出事时要丢的东西越多，"改一点点"正是翻车的经典开场白。第二，**试验性改动直接在主线上进行**——分支就是为这种时刻准备的，开分支只要一条命令，试坏了删掉就行。
 
 记住这条规矩：**任何"试试看"的改动，先 `git commit` 保住当前的好版本，再 `git switch -c` 开个新分支去试。** 存档和分支加起来不到十秒钟，能省下两小时的重写。
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch12" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>

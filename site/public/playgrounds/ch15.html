@@ -1,0 +1,150 @@
+<!--snap title="第 15 章结束时 · 换上 Tailwind 新装" type="react-tailwind" note="还是那个 React 主页，样式全改用 Tailwind 类名写了。试试把按钮的 bg-blue-500 改成 bg-green-500，或者把照片墙的 lg:grid-cols-3 改成 lg:grid-cols-2。提醒一句：这一版还留着第 16 章要修的三个小毛病，眼尖的你能先找出来吗？" -->
+// 在线版已经帮你准备好 React、ReactDOM 和 Tailwind，
+// 书里的 import 和接入配置就不用写了，零件都拼在一个文件里。
+const { useState } = React;
+
+
+function Header() {
+  return (
+    <header className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-white">
+      <div className="text-xl font-bold">小北的空间</div>
+      <nav className="flex gap-6 text-gray-600">
+        <a href="#home" className="hover:text-blue-500">首页</a>
+        <a href="#photos" className="hover:text-blue-500">照片墙</a>
+        <a href="#notes" className="hover:text-blue-500">学习笔记</a>
+        <a href="#contact" className="hover:text-blue-500">联系我</a>
+      </nav>
+    </header>
+  );
+}
+
+function Profile() {
+  return (
+    <section id="profile" className="py-6">
+      <h2 className="text-2xl font-bold mb-3">关于我</h2>
+      <p className="mb-2">你好，我是小北，一名大一新生。</p>
+      <p className="text-gray-600">我喜欢摄影，爱背着相机在校园里到处拍。这个网站是我的小窝：放照片、记笔记，顺便练习刚学的建站本领。</p>
+    </section>
+  );
+}
+
+function PhotoWall() {
+  return (
+    <section id="photos" className="py-6">
+      <h2 className="text-2xl font-bold mb-3">我的照片墙</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {photos.map((photo) => (
+          <figure key={photo.id} className="rounded-lg overflow-hidden shadow-md bg-white">
+            <img src={photo.src} className="w-full" />
+            <figcaption className="p-3 text-sm text-gray-500">{photo.title}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Notes() {
+  const items = ["HTML 入门：标签就是盒子", "我的第一张网页诞生记", "表单为什么点了发送没反应"];
+  return (
+    <section id="notes" className="py-6">
+      <h2 className="text-2xl font-bold mb-3">学习笔记</h2>
+      <ul className="list-disc pl-5 text-gray-600">
+        {items.map((n) => (
+          <li key={n} className="py-0.5"><a href="#notes" className="hover:text-blue-500">{n}</a></li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function TodoApp() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: "复习 React 笔记", done: true },
+    { id: 2, text: "去拍校园的银杏", done: false },
+    { id: 3, text: "整理照片墙的照片", done: false },
+  ]);
+  const [inputText, setInputText] = useState("");
+
+  function addTodo() {
+    const text = inputText.trim();
+    if (text === "") return;
+    setTodos([...todos, { id: Date.now(), text: text, done: false }]);
+    setInputText("");
+  }
+  function toggleTodo(id) {
+    setTodos(todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t)));
+  }
+  function deleteTodo(id) {
+    setTodos(todos.filter((t) => t.id !== id));
+  }
+
+  return (
+    <section id="todo" className="py-6">
+      <h2 className="text-2xl font-bold mb-3">我的待办清单</h2>
+      <div className="flex gap-2 mb-3">
+        <input value={inputText} onChange={(e) => setInputText(e.target.value)} placeholder="想做什么？写下来" className="border rounded px-3 py-2 flex-1" />
+        <button onClick={addTodo} className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">添加</button>
+      </div>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id} className="flex items-center gap-2 py-1.5 border-b border-gray-100">
+            <label className="flex items-center gap-2 flex-1 cursor-pointer">
+              <input type="checkbox" checked={todo.done} onChange={() => toggleTodo(todo.id)} />
+              <span className={todo.done ? "line-through text-gray-400" : ""}>{todo.text}</span>
+            </label>
+            <button onClick={() => deleteTodo(todo.id)} className="text-red-500 text-sm">删除</button>
+          </li>
+        ))}
+      </ul>
+      <p className="text-gray-500 text-sm mt-2">还剩 {todos.filter((t) => !t.done).length} 件事没做完</p>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="py-6">
+      <h2 className="text-2xl font-bold mb-3">联系我</h2>
+      <form className="flex flex-col gap-3 max-w-md" onSubmit={(e) => e.preventDefault()}>
+        <input type="text" placeholder="你的名字" className="border rounded px-3 py-2" />
+        <input type="email" placeholder="你的邮箱" className="border rounded px-3 py-2" />
+        <textarea rows={4} placeholder="想说的话" className="border rounded px-3 py-2"></textarea>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 self-start">发送</button>
+      </form>
+    </section>
+  );
+}
+
+function App() {
+  return (
+    <div className="min-h-screen bg-[#f7f9fc] text-gray-800">
+      <Header />
+      <main className="max-w-[900px] mx-auto px-6">
+        <Profile />
+        <PhotoWall />
+        <Notes />
+        <TodoApp />
+        <Contact />
+      </main>
+      <footer className="text-center text-gray-400 text-sm py-6">
+        <p>© 2026 小北的空间 · 用 React + Tailwind 搭的</p>
+      </footer>
+    </div>
+  );
+}
+
+
+// ===== 照片数据在这一段 =====
+// 试玩版用占位图代替本地图片文件，地址是一长串字符，不用细看；
+// 上面的组件只管拿 title 和 src 来用，数据具体长什么样不影响它们。
+const photos = [
+  { id: 1, src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fdba74'/%3E%3Cstop offset='.55' stop-color='%23f59e0b'/%3E%3Cstop offset='.56' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%231e40af'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Ccircle cx='300' cy='218' r='40' fill='%23fff7ed'/%3E%3Cpath d='M0 300 Q 75 285 150 300 T 300 300 T 450 300 T 600 300' stroke='%23bfdbfe' stroke-width='5' fill='none' opacity='.7'/%3E%3Cpath d='M0 345 Q 75 330 150 345 T 300 345 T 450 345 T 600 345' stroke='%23bfdbfe' stroke-width='5' fill='none' opacity='.5'/%3E%3C/svg%3E", title: "学校湖边的日落" },
+  { id: 2, src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fef3c7'/%3E%3Cstop offset='1' stop-color='%23fcd34d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Crect y='320' width='600' height='80' fill='%23d6d3d1'/%3E%3Crect y='312' width='600' height='10' fill='%23a8a29e'/%3E%3Cg fill='%23292524'%3E%3Cellipse cx='300' cy='300' rx='95' ry='52'/%3E%3Ccircle cx='300' cy='225' r='58'/%3E%3Cpolygon points='252,190 262,132 292,172'/%3E%3Cpolygon points='348,190 338,132 308,172'/%3E%3Cpath d='M392 318 Q 470 300 452 232' stroke='%23292524' stroke-width='17' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3Ccircle cx='278' cy='222' r='7' fill='%23fbbf24'/%3E%3Ccircle cx='322' cy='222' r='7' fill='%23fbbf24'/%3E%3C/svg%3E", title: "宿舍楼下的猫" },
+  { id: 3, src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2378350f'/%3E%3Cpolygon points='120,0 330,0 480,400 210,400' fill='%23fde68a' opacity='.85'/%3E%3Cpolygon points='360,0 450,0 560,400 480,400' fill='%23fcd34d' opacity='.55'/%3E%3Crect x='60' y='30' width='480' height='340' fill='none' stroke='%23fef3c7' stroke-width='10' opacity='.8'/%3E%3C/svg%3E", title: "教学楼窗边的光影" },
+  { id: 4, src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bae6fd'/%3E%3Cstop offset='1' stop-color='%23dcfce7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Crect x='285' y='210' width='30' height='150' fill='%237c4a21'/%3E%3Ccircle cx='300' cy='150' r='95' fill='%2316a34a'/%3E%3Ccircle cx='225' cy='195' r='60' fill='%2322c55e'/%3E%3Ccircle cx='375' cy='195' r='60' fill='%2315803d'/%3E%3Crect y='358' width='600' height='42' fill='%2386c06c'/%3E%3C/svg%3E", title: "操场边的一棵老树" },
+  { id: 5, src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bae6fd'/%3E%3Cstop offset='1' stop-color='%23e0f2fe'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Ccircle cx='492' cy='74' r='34' fill='%23fef9c3'/%3E%3Cpolygon points='-20,400 190,130 400,400' fill='%2394a3b8'/%3E%3Cpolygon points='190,130 226,178 190,196 152,178' fill='%23ffffff'/%3E%3Cpolygon points='190,400 390,170 620,400' fill='%2364748b'/%3E%3Cpolygon points='390,170 424,208 390,224 356,208' fill='%23f8fafc'/%3E%3C/svg%3E", title: "山间的清晨" },
+  { id: 6, src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e0f2fe'/%3E%3Cstop offset='.45' stop-color='%23e0f2fe'/%3E%3Cstop offset='.46' stop-color='%230ea5e9'/%3E%3Cstop offset='1' stop-color='%230369a1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Cpath d='M0 250 Q 75 236 150 250 T 300 250 T 450 250 T 600 250' stroke='%23e0f2fe' stroke-width='5' fill='none' opacity='.8'/%3E%3Cpath d='M0 320 Q 75 306 150 320 T 300 320 T 450 320 T 600 320' stroke='%23bae6fd' stroke-width='5' fill='none' opacity='.6'/%3E%3Cg%3E%3Cpolygon points='292,236 292,168 344,236' fill='%23ffffff'/%3E%3Cpolygon points='284,236 284,186 246,236' fill='%23fef3c7'/%3E%3Crect x='292' y='160' width='5' height='80' fill='%2392400e'/%3E%3Cpath d='M232 240 L368 240 L344 266 L254 266 Z' fill='%23b45309'/%3E%3C/g%3E%3C/svg%3E", title: "海边的风" }
+];
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

@@ -233,3 +233,9 @@ sidebar:
 2. 分享网页要**整个文件夹一起打包**，少一个文件都会裂。
 
 改完重新打包发群里，照片全出来了。小北给这条教训起了个名：**网页不是一张纸，是一个文件夹。**
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch04" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>

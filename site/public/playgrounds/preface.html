@@ -1,0 +1,227 @@
+<!--snap title="先睹为快 · 毕业时的小北的空间" type="html" note="这就是学完这本书后，小北的空间长成的样子：排版整齐的主页、实时天气、能存住的待办清单，还有一个人人能留言的留言板。每一块都是后面某一章亲手做出来的。先随便点一点、改一改，过过瘾。" -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小北的空间 · 个人主页</title>
+  <style>
+  :root { --main-color: #2f80ed; --text-color: #333333; --bg-color: #f7f9fc; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+  header.site { display: flex; justify-content: space-between; align-items: center; padding: 0 24px; height: 60px; background: #1e293b; }
+  .logo { color: #fff; font-size: 20px; font-weight: bold; animation: fadeIn 0.8s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .menu { display: flex; gap: 20px; }
+  .menu a { color: #e2e8f0; text-decoration: none; }
+  .menu a:hover { color: #fff; }
+  main { max-width: 900px; margin: 0 auto; padding: 24px; }
+  section { margin-bottom: 28px; }
+  h2 { color: var(--main-color); font-size: 22px; }
+  .photo-wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .photo-wall img { width: 100%; display: block; border-radius: 8px; transition: transform 0.3s ease; }
+  .photo-wall img:hover { transform: scale(1.05); }
+  .notes li::before { content: "📌 "; }
+  .notes li:first-child { font-weight: bold; color: var(--main-color); }
+  button { background: var(--main-color); color: #fff; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; transition: background-color 0.3s ease; }
+  button:hover { background: #1c66cc; }
+  input, textarea, select { font: inherit; padding: 7px 9px; border: 1px solid #cbd5e1; border-radius: 6px; }
+  .to-top { position: fixed; right: 20px; bottom: 20px; background: var(--main-color); color: #fff; padding: 10px 14px; border-radius: 8px; text-decoration: none; }
+  footer { text-align: center; color: #94a3b8; font-size: 14px; padding: 16px; }
+  @media (max-width: 768px) { .photo-wall { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) {
+    .photo-wall { grid-template-columns: 1fr; }
+    header.site { flex-direction: column; height: auto; padding: 10px 12px; gap: 6px; }
+    .menu { flex-wrap: wrap; justify-content: center; }
+  }
+
+  /* 试玩版补充：后面章节新板块的样式 */
+  .done { text-decoration: line-through; color: #999; }
+  #todo-list li, #todoList li { margin: 6px 0; }
+  #todo-list button, #todoList button { padding: 3px 10px; margin-left: 8px; }
+  .gb-item { border-top: 1px solid #e2e8f0; padding: 8px 0; }
+  #auth-area { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="logo">小北的空间</div>
+    <nav class="menu">
+      <a href="#">首页</a>
+      <a href="#photos">照片墙</a>
+      <a href="#notes">学习笔记</a>
+      <a href="#todo">待办清单</a>
+      <a href="#guestbook">留言板</a>
+      <a href="#contact">联系我</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about">
+      <h2>关于我</h2>
+      <p>你好，我是小北，18 岁，刚上大一，喜欢摄影。这个网站是我用 HTML
+         一行一行敲出来的，从骨架到衣服，再到会动、会记事，都是我自己写的。</p>
+    </section>
+    <section id="weather-sec">
+      <h2>今日天气 · 北京</h2>
+      <p id="weather">正在查询，请稍等……</p>
+    </section>
+    <section id="photos">
+      <h2>照片墙</h2>
+      <div class="photo-wall">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fdba74'/%3E%3Cstop offset='.55' stop-color='%23f59e0b'/%3E%3Cstop offset='.56' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%231e40af'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Ccircle cx='300' cy='218' r='40' fill='%23fff7ed'/%3E%3Cpath d='M0 300 Q 75 285 150 300 T 300 300 T 450 300 T 600 300' stroke='%23bfdbfe' stroke-width='5' fill='none' opacity='.7'/%3E%3Cpath d='M0 345 Q 75 330 150 345 T 300 345 T 450 345 T 600 345' stroke='%23bfdbfe' stroke-width='5' fill='none' opacity='.5'/%3E%3C/svg%3E" alt="黄昏时分的校园湖面">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2378350f'/%3E%3Cpolygon points='120,0 330,0 480,400 210,400' fill='%23fde68a' opacity='.85'/%3E%3Cpolygon points='360,0 450,0 560,400 480,400' fill='%23fcd34d' opacity='.55'/%3E%3Crect x='60' y='30' width='480' height='340' fill='none' stroke='%23fef3c7' stroke-width='10' opacity='.8'/%3E%3C/svg%3E" alt="教学楼窗边的光影">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bae6fd'/%3E%3Cstop offset='1' stop-color='%23dcfce7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Crect x='285' y='210' width='30' height='150' fill='%237c4a21'/%3E%3Ccircle cx='300' cy='150' r='95' fill='%2316a34a'/%3E%3Ccircle cx='225' cy='195' r='60' fill='%2322c55e'/%3E%3Ccircle cx='375' cy='195' r='60' fill='%2315803d'/%3E%3Crect y='358' width='600' height='42' fill='%2386c06c'/%3E%3C/svg%3E" alt="操场边的一棵老树">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fef3c7'/%3E%3Cstop offset='1' stop-color='%23fcd34d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Crect y='320' width='600' height='80' fill='%23d6d3d1'/%3E%3Crect y='312' width='600' height='10' fill='%23a8a29e'/%3E%3Cg fill='%23292524'%3E%3Cellipse cx='300' cy='300' rx='95' ry='52'/%3E%3Ccircle cx='300' cy='225' r='58'/%3E%3Cpolygon points='252,190 262,132 292,172'/%3E%3Cpolygon points='348,190 338,132 308,172'/%3E%3Cpath d='M392 318 Q 470 300 452 232' stroke='%23292524' stroke-width='17' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3Ccircle cx='278' cy='222' r='7' fill='%23fbbf24'/%3E%3Ccircle cx='322' cy='222' r='7' fill='%23fbbf24'/%3E%3C/svg%3E" alt="宿舍楼下的猫">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bae6fd'/%3E%3Cstop offset='1' stop-color='%23e0f2fe'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Ccircle cx='492' cy='74' r='34' fill='%23fef9c3'/%3E%3Cpolygon points='-20,400 190,130 400,400' fill='%2394a3b8'/%3E%3Cpolygon points='190,130 226,178 190,196 152,178' fill='%23ffffff'/%3E%3Cpolygon points='190,400 390,170 620,400' fill='%2364748b'/%3E%3Cpolygon points='390,170 424,208 390,224 356,208' fill='%23f8fafc'/%3E%3C/svg%3E" alt="山间的清晨">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e0f2fe'/%3E%3Cstop offset='.45' stop-color='%23e0f2fe'/%3E%3Cstop offset='.46' stop-color='%230ea5e9'/%3E%3Cstop offset='1' stop-color='%230369a1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23g)'/%3E%3Cpath d='M0 250 Q 75 236 150 250 T 300 250 T 450 250 T 600 250' stroke='%23e0f2fe' stroke-width='5' fill='none' opacity='.8'/%3E%3Cpath d='M0 320 Q 75 306 150 320 T 300 320 T 450 320 T 600 320' stroke='%23bae6fd' stroke-width='5' fill='none' opacity='.6'/%3E%3Cg%3E%3Cpolygon points='292,236 292,168 344,236' fill='%23ffffff'/%3E%3Cpolygon points='284,236 284,186 246,236' fill='%23fef3c7'/%3E%3Crect x='292' y='160' width='5' height='80' fill='%2392400e'/%3E%3Cpath d='M232 240 L368 240 L344 266 L254 266 Z' fill='%23b45309'/%3E%3C/g%3E%3C/svg%3E" alt="海边的风">
+      </div>
+    </section>
+    <section id="notes">
+      <h2>学习笔记</h2>
+      <ul class="notes">
+        <li><a href="#">HTML 入门：标签就是盒子</a>——10 月 5 日</li>
+        <li><a href="#">我的第一张网页诞生记</a>——10 月 8 日</li>
+        <li><a href="#">表单为什么点了发送没反应</a>——10 月 12 日</li>
+      </ul>
+    </section>
+    <section id="todo">
+      <h2>待办清单</h2>
+      <input id="newTodo" placeholder="输入要做的事">
+      <button id="addBtn">添加</button>
+      <ul id="todoList"></ul>
+    </section>
+    <section id="guestbook">
+      <h2>留言板</h2>
+      <p>给我留句话吧。提醒一句：留言只存在你这台设备的浏览器里，换个浏览器就看不到了——想让所有人看到同一份，那是第 19 章后端的活。</p>
+      <p><input id="gb-name" type="text" placeholder="你的昵称"></p>
+      <p><textarea id="gb-content" rows="3" cols="40" placeholder="想说的话写在这里"></textarea></p>
+      <p><button id="gb-send" type="button">提交留言</button></p>
+      <div id="gb-list"></div>
+    </section>
+    <section id="contact">
+      <h2>联系我</h2>
+      <form>
+        <p><label for="name">你的名字：</label>
+           <input type="text" id="name" name="name" placeholder="比如：小明"></p>
+        <p><label for="email">你的邮箱：</label>
+           <input type="email" id="email" name="email" placeholder="name@example.com"></p>
+        <p><label for="topic">想聊点啥：</label>
+           <select id="topic" name="topic"><option>夸夸这个网站</option><option>提个建议</option><option>约一起拍照</option></select></p>
+        <p><label for="message">留言内容：</label><br>
+           <textarea id="message" name="message" rows="4" placeholder="想说的话写在这里"></textarea></p>
+        <button type="submit">发送</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 小北 · 一行一行手工打造</p>
+  </footer>
+  <a class="to-top" href="#">回到顶部</a>
+  <script>
+    // 第 11 章的天气小应用：向真实接口现场要数据（需要联网）
+    function describeWeather(code) {
+      const map = {
+        0: "晴", 1: "多云", 2: "多云", 3: "阴", 45: "有雾", 48: "有雾",
+        51: "毛毛雨", 53: "毛毛雨", 55: "毛毛雨", 61: "小雨", 63: "中雨",
+        65: "大雨", 71: "小雪", 73: "中雪", 75: "大雪", 95: "雷阵雨"
+      };
+      return map[code] || "说不清的天气";
+    }
+
+    async function loadWeather() {
+      try {
+        const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=39.90&longitude=116.40&current=temperature_2m,weather_code");
+        const data = await response.json();
+        const now = data.current;
+        const el = document.getElementById("weather");
+        el.textContent = "现在气温 " + now.temperature_2m + "℃，天气：" + describeWeather(now.weather_code);
+      } catch (e) {
+        document.getElementById("weather").textContent = "天气没查到（多半是没联网），过会儿再刷新试试。";
+      }
+    }
+
+    loadWeather();
+  </script>
+  <script>
+    // 第 11 章升级版待办：数据存进 localStorage，刷新不丢失
+    const STORAGE_KEY = "my-todos";
+    let todos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    const listEl = document.getElementById("todoList");
+
+    function save() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+    }
+
+    function makeButton(text, onClick) {
+      const btn = document.createElement("button");
+      btn.textContent = text;
+      btn.onclick = onClick;
+      return btn;
+    }
+
+    function render() {
+      listEl.innerHTML = "";
+      todos.forEach(function (item, index) {
+        const li = document.createElement("li");
+        li.textContent = item.text + " ";
+        if (item.done) li.style.textDecoration = "line-through";
+        li.appendChild(makeButton(item.done ? "取消完成" : "完成", function () {
+          item.done = !item.done;
+          save();
+          render();
+        }));
+        li.appendChild(makeButton("删掉", function () {
+          todos.splice(index, 1);
+          save();
+          render();
+        }));
+        listEl.appendChild(li);
+      });
+    }
+
+    document.getElementById("addBtn").onclick = function () {
+      const input = document.getElementById("newTodo");
+      const text = input.value.trim();
+      if (!text) return;
+      todos.push({ text: text, done: false });
+      input.value = "";
+      save();
+      render();
+    };
+
+    render();
+  </script>
+  <script>
+    // 第 17 章的留言板：存 localStorage，刷新不丢（Harness 帮小北写的同款逻辑）
+    const GB_KEY = "guestbook-messages";
+    let gbMessages = JSON.parse(localStorage.getItem(GB_KEY));
+    if (!gbMessages) {
+      gbMessages = [
+        { name: "小美", content: "照片拍得太好看了，湖边那张绝了！" },
+        { name: "阿杰", content: "待办清单很好用，我也照着做了一个。" }
+      ];
+      localStorage.setItem(GB_KEY, JSON.stringify(gbMessages));
+    }
+    const gbList = document.getElementById("gb-list");
+    function renderGb() {
+      gbList.innerHTML = "";
+      gbMessages.forEach(function (m) {
+        const div = document.createElement("div");
+        div.className = "gb-item";
+        div.textContent = m.name + "：" + m.content;
+        gbList.appendChild(div);
+      });
+    }
+    document.getElementById("gb-send").addEventListener("click", function () {
+      const name = document.getElementById("gb-name").value.trim() || "匿名访客";
+      const content = document.getElementById("gb-content").value.trim();
+      if (!content) return;
+      gbMessages.unshift({ name: name, content: content });
+      localStorage.setItem(GB_KEY, JSON.stringify(gbMessages));
+      document.getElementById("gb-content").value = "";
+      renderGb();
+    });
+    renderGb();
+  </script>
+</body>
+</html>

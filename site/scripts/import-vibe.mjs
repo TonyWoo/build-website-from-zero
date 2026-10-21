@@ -13,6 +13,8 @@ const CONTENT_DIR = join(ROOT, '..', 'content', 'zh');
 const OUT_DIR = join(ROOT, 'src', 'content', 'docs');
 const IMAGES_DIR = join(ROOT, '..', 'images');
 const PUBLIC_IMAGES_DIR = join(ROOT, 'public', 'images');
+const PLAYGROUNDS_DIR = join(ROOT, '..', 'playgrounds');
+const PUBLIC_PLAYGROUNDS_DIR = join(ROOT, 'public', 'playgrounds');
 
 // 正文图片：仓库根 images/ → site/public/images/（public 映射到站点根，
 // 构建后位于 <base>/images/，与 fixImagePaths 改写的路径对应）
@@ -28,6 +30,35 @@ function copyImages() {
   }
   console.log(`import-vibe: 拷贝图片 ${n} 张`);
 }
+
+// 在线试玩快照：仓库根 playgrounds/ → site/public/playgrounds/
+// （试玩壳在 site/public/playground/，按 ../playgrounds/<snap>.html 取快照）
+function copyPlaygrounds() {
+  if (!existsSync(PLAYGROUNDS_DIR)) return;
+  mkdirSync(PUBLIC_PLAYGROUNDS_DIR, { recursive: true });
+  let n = 0;
+  for (const f of readdirSync(PLAYGROUNDS_DIR)) {
+    if (/\.html$/i.test(f)) {
+      copyFileSync(join(PLAYGROUNDS_DIR, f), join(PUBLIC_PLAYGROUNDS_DIR, f));
+      n++;
+    }
+  }
+  console.log(`import-vibe: 拷贝试玩快照 ${n} 份`);
+}
+
+// 正文里的 <!-- playground: chXX --> 标记展开为试玩框（仅站点构建时展开；
+// 书稿里只是一行 HTML 注释，导出 EPUB/PDF 时不可见、不会带进去）
+const expandPlayground = (body) =>
+  body.replace(
+    /^<!--\s*playground:\s*([\w-]+)\s*-->$/gm,
+    [
+      '## 动手玩一玩：本章的页面',
+      '',
+      '这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。',
+      '',
+      `<iframe src="${SITE_BASE}playground/?snap=$1" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>`,
+    ].join('\n'),
+  );
 
 // 站点 base 路径（astro.config.ts 里的 base: "..."），图片引用要带上它，
 // 否则部署到 GitHub Pages 项目路径下时图片 404
@@ -84,6 +115,7 @@ function frontmatter({ title, description, order, label, group }) {
 
 function main() {
   copyImages();
+  copyPlaygrounds();
   rmSync(OUT_DIR, { recursive: true, force: true });
   mkdirSync(OUT_DIR, { recursive: true });
 
@@ -99,7 +131,7 @@ function main() {
   const write = (relPath, fm, body) => {
     const full = join(OUT_DIR, relPath);
     mkdirSync(dirname(full), { recursive: true });
-    writeFileSync(full, fm + demoteH1(fixImagePaths(body)).replace(/\s+$/, '') + '\n');
+    writeFileSync(full, fm + expandPlayground(demoteH1(fixImagePaths(body))).replace(/\s+$/, '') + '\n');
     pages++;
   };
 

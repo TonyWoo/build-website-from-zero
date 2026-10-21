@@ -205,3 +205,9 @@ HTML 是什么？一句话说清：**HTML 是用来描述网页内容的语言**
 第三翻：中文变乱码。他图省事，删骨架时把 `<meta charset="UTF-8">` 一起删了，又用系统自带的记事本另存了一份，编码被换成了别的格式。打开页面，满屏"锟斤拷"。补回 meta、文件用 VS Code 重新以 UTF-8 保存，才救回来。
 
 这一晚的收获比写对十行代码还大：图片找不到先查路径，排版不对先查标签闭合，文字乱码先查 charset 和保存编码。这三条排查顺序，值得贴在显示器边上。
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch03" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>

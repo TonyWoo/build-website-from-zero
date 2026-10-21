@@ -1,0 +1,27 @@
+<!--snap title="第 1 章 · 一个网页的三层" type="html" note="网页由三层组成：HTML 管内容、CSS 管样子、JavaScript 管动作。试着改一改 HTML 里的文字，把 CSS 里的颜色换掉，或者把最后那段 JavaScript 删掉，再点一下按钮，看看会发生什么。" -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>网页的三层</title>
+  <style>
+    /* 第二层：CSS 管样子 */
+    body { font-family: sans-serif; text-align: center; padding-top: 60px; }
+    h1 { color: #2563eb; }
+    button { font-size: 16px; padding: 8px 20px; }
+  </style>
+</head>
+<body>
+  <!-- 第一层：HTML 管内容 -->
+  <h1>你好，我是小北</h1>
+  <p id="intro">这是我的第一个网页。</p>
+  <button id="btn">点我一下</button>
+
+  <script>
+    // 第三层：JavaScript 管动作
+    document.getElementById("btn").addEventListener("click", function () {
+      document.getElementById("intro").textContent = "按钮被点啦！JavaScript 正在干活。";
+    });
+  </script>
+</body>
+</html>

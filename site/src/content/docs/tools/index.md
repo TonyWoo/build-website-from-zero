@@ -153,3 +153,9 @@ pwd
 问题出在哪？下载站经常把旧版本、甚至捆绑了其他软件的安装包放在下载位上。**装开发工具只认官网**，这是铁律：Node.js 认 `nodejs.org`，VS Code 认 `code.visualstudio.com`。
 
 还有第二个小插曲：他第一次输 `node -v` 时，明明装好了却提示"不是内部或外部命令"。原因是终端是**安装之前就打开的**，还不知道有新软件入驻。彻底关掉再重新打开，版本号立刻就出来了。记住：**装完软件验证失败，先重启终端，再怀疑人生**。
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch02" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>

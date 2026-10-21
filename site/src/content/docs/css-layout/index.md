@@ -246,3 +246,9 @@ Flex 管一条线，可照片墙是"几行几列"的一张网。这时候轮到 
 同一天他还翻了第二个车：给照片加"NEW"角标，`position: absolute` 一写，角标直接飞到整个浏览器的右上角。原因就是 6.4 那条规矩——角标要相对卡片摆放，前提是卡片先写 `position: relative` 当参照物；没写，它就一路往上找到页面根部去了。
 
 **布局排不动、元素到处飞，先别怀疑浏览器，八成是口令下错了对象，或者忘了给参照物。**
+
+## 动手玩一玩：本章的页面
+
+这就是本章结束时小北的网站长成的样子。左边是代码，可以直接改；右边是实时预览，改完马上能看到效果。改坏了也不怕，点试玩框右上角的「⟲ 重置代码」就能恢复。
+
+<iframe src="/build-website-from-zero/playground/?snap=ch06" title="在线试玩：本章的页面" loading="lazy" style="width:100%;height:700px;border:1px solid #dbe4f0;border-radius:12px;background:#fff;"></iframe>
