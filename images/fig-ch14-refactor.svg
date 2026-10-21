@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/></marker>
+</defs>
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+<g font-family="'Noto Sans SC',sans-serif">
+<text x="185" y="38" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">第 10 章：一整页 JS 手动拼</text>
+<text x="575" y="38" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">第 14 章：拆成组件</text>
+<rect x="25" y="52" width="320" height="208" rx="10" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2.5"/>
+<rect x="415" y="52" width="320" height="208" rx="10" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2.5"/>
+<rect x="50" y="88" width="270" height="104" rx="10" fill="#F8FAFC" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5"/>
+<path d="M68,118 q14,-12 28,0 t28,0 t28,0 t28,0 t28,0 t28,0" stroke="#64748B" stroke-width="2.5" fill="none"/>
+<path d="M82,148 q14,-12 28,0 t28,0 t28,0 t28,0 t28,0 t28,0" stroke="#64748B" stroke-width="2.5" fill="none"/>
+<path d="M68,178 q14,-12 28,0 t28,0 t28,0 t28,0 t28,0 t28,0" stroke="#64748B" stroke-width="2.5" fill="none"/>
+<text x="185" y="232" text-anchor="middle" font-size="13" fill="#64748B">代码全挤在一起，改一处怕碰坏三处</text>
+<line x1="352" y1="156" x2="406" y2="156" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="380" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#2563EB">重构</text>
+<rect x="435" y="88" width="140" height="52" rx="10" fill="#EAF2FE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="505" y="120" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">Header</text>
+<rect x="595" y="88" width="140" height="52" rx="10" fill="#EAF2FE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="665" y="120" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">Profile</text>
+<rect x="435" y="162" width="140" height="52" rx="10" fill="#EAF2FE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="505" y="194" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">PhotoWall</text>
+<rect x="595" y="162" width="140" height="52" rx="10" fill="#EAF2FE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="665" y="194" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">TodoApp</text>
+<text x="575" y="240" text-anchor="middle" font-size="13" fill="#64748B">一个组件管一件事，改谁找谁</text>
+</g>
+</svg>

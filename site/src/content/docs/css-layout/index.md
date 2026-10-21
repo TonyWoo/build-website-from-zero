@@ -41,6 +41,8 @@ span { display: block; }  /* 让 span 独占一行 */
 
 ## 6.2 Flex：一维排版的好手
 
+![Flex 示意图：容器里三个方块沿主轴排队，交叉轴与主轴垂直](/build-website-from-zero/images/fig-ch06-flex.svg)
+
 先说人话：Flex 专门管"一条线"上的排版——让一排（或一列）元素整齐站队，该居中居中，该分散分散。导航栏、按钮组、卡片行，背后大多是它。
 
 用 Flex 有一条铁规矩，先记住：**`display: flex` 写在容器（父元素）上，排的是它里面的子元素。** 就像喊口令的是老师，听口令的是学生——口令喊错了对象，全班纹丝不动（翻车现场有实例）。
@@ -73,6 +75,8 @@ span { display: block; }  /* 让 span 独占一行 */
 再认识两个词：Flex 排队的主线叫**主轴**，默认横着；与它垂直的叫**交叉轴**。`justify-content` 管主轴、`align-items` 管交叉轴。想改成竖排，给容器加 `flex-direction: column`。
 
 ## 6.3 Grid：二维排版的棋盘
+
+![Grid 示意图：3 列 2 行的网格棋盘与 gap 间距](/build-website-from-zero/images/fig-ch06-grid.svg)
 
 Flex 管一条线，可照片墙是"几行几列"的一张网。这时候轮到 Grid：它像一张棋盘，同时管行和列，专做二维排版。
 

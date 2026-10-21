@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/></marker>
+</defs>
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+<g font-family="'Noto Sans SC',sans-serif">
+<text x="125" y="56" font-size="17" font-weight="bold" fill="#16324F" text-anchor="middle">手机</text>
+<text x="350" y="56" font-size="17" font-weight="bold" fill="#16324F" text-anchor="middle">平板</text>
+<text x="610" y="56" font-size="17" font-weight="bold" fill="#16324F" text-anchor="middle">电脑</text>
+<line x1="220" y1="78" x2="220" y2="302" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="475" y1="78" x2="475" y2="302" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="220" y="70" font-size="13" font-weight="bold" fill="#F59E0B" text-anchor="middle">480px</text>
+<text x="475" y="70" font-size="13" font-weight="bold" fill="#F59E0B" text-anchor="middle">768px</text>
+<rect x="60" y="88" width="130" height="212" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<rect x="68" y="96" width="114" height="22" rx="6" fill="#EAF2FE"/>
+<rect x="75" y="132" width="100" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="75" y="176" width="100" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="75" y="220" width="100" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="250" y="88" width="200" height="212" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<rect x="258" y="96" width="184" height="22" rx="6" fill="#EAF2FE"/>
+<rect x="262" y="132" width="84" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="354" y="132" width="84" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="262" y="176" width="84" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="354" y="176" width="84" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="262" y="220" width="84" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="354" y="220" width="84" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="500" y="88" width="220" height="212" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<rect x="508" y="96" width="204" height="22" rx="6" fill="#EAF2FE"/>
+<rect x="512" y="132" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="582" y="132" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="652" y="132" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="512" y="176" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="582" y="176" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="652" y="176" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="512" y="220" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="582" y="220" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="652" y="220" width="58" height="36" rx="6" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2"/>
+<text x="125" y="330" font-size="13" fill="#64748B" text-anchor="middle">≤ 480px：排成 1 列</text>
+<text x="350" y="330" font-size="13" fill="#64748B" text-anchor="middle">481–768px：排成 2 列</text>
+<text x="610" y="330" font-size="13" fill="#64748B" text-anchor="middle">大于 768px：排成 3 列</text>
+</g>
+</svg>

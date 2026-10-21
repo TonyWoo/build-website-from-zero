@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380">
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+<g font-family="'Noto Sans SC',sans-serif">
+<path d="M380,82 V112 M95,112 H650 M95,112 V148 M280,112 V148 M465,112 V148 M650,112 V148" stroke="#2563EB" stroke-width="2.5" fill="none"/>
+<path d="M465,202 V232 M350,232 H580 M350,232 V262 M465,232 V262 M580,232 V262" stroke="#2563EB" stroke-width="2.5" fill="none"/>
+<rect x="305" y="28" width="150" height="54" rx="10" fill="#EAF2FE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="380" y="63" text-anchor="middle" font-size="17" font-weight="bold" fill="#16324F">App</text>
+<text x="392" y="102" font-size="13" font-weight="bold" fill="#F59E0B">props</text>
+<rect x="20" y="148" width="150" height="54" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="95" y="183" text-anchor="middle" font-size="17" font-weight="bold" fill="#16324F">Header</text>
+<rect x="205" y="148" width="150" height="54" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="280" y="183" text-anchor="middle" font-size="17" font-weight="bold" fill="#16324F">Profile</text>
+<rect x="390" y="148" width="150" height="54" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="465" y="183" text-anchor="middle" font-size="17" font-weight="bold" fill="#16324F">PhotoWall</text>
+<rect x="575" y="148" width="150" height="54" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="650" y="183" text-anchor="middle" font-size="17" font-weight="bold" fill="#16324F">TodoApp</text>
+<rect x="295" y="262" width="110" height="44" rx="10" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2.5"/>
+<text x="350" y="290" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">PhotoCard</text>
+<rect x="410" y="262" width="110" height="44" rx="10" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2.5"/>
+<text x="465" y="290" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">PhotoCard</text>
+<rect x="525" y="262" width="110" height="44" rx="10" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2.5"/>
+<text x="580" y="290" text-anchor="middle" font-size="15" font-weight="bold" fill="#16324F">PhotoCard</text>
+<text x="380" y="345" text-anchor="middle" font-size="13" fill="#64748B">数据靠 props 从父组件传给子组件，组件像积木一样拼起来</text>
+</g>
+</svg>

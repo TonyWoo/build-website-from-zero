@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400">
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/></marker>
+</defs>
+
+<!-- 阶段 1：纯 HTML 主页 -->
+<rect x="30" y="30" width="210" height="150" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="52" cy="52" r="11" fill="#2563EB"/>
+<text x="52" y="57" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">1</text>
+<rect x="75" y="48" width="140" height="80" rx="6" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="77" y="50" width="136" height="14" rx="3" fill="#EAF2FE"/>
+<rect x="87" y="78" width="100" height="6" rx="3" fill="#7FB2F0"/>
+<rect x="87" y="94" width="116" height="6" rx="3" fill="#7FB2F0"/>
+<rect x="87" y="110" width="76" height="6" rx="3" fill="#7FB2F0"/>
+<text x="135" y="162" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="15" font-weight="bold" fill="#16324F">纯 HTML 主页</text>
+
+<!-- 阶段 2：CSS 美化 -->
+<rect x="275" y="30" width="210" height="150" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="297" cy="52" r="11" fill="#2563EB"/>
+<text x="297" y="57" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">2</text>
+<rect x="320" y="48" width="140" height="80" rx="6" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="322" y="50" width="136" height="14" rx="3" fill="#7FB2F0"/>
+<rect x="332" y="76" width="52" height="40" rx="4" fill="#EAF2FE" stroke="#2563EB" stroke-width="2"/>
+<rect x="396" y="80" width="52" height="6" rx="3" fill="#7FB2F0"/>
+<rect x="396" y="96" width="44" height="6" rx="3" fill="#7FB2F0"/>
+<text x="380" y="162" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="15" font-weight="bold" fill="#16324F">CSS 美化</text>
+
+<!-- 阶段 3：JavaScript 互动 -->
+<rect x="520" y="30" width="210" height="150" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="542" cy="52" r="11" fill="#2563EB"/>
+<text x="542" y="57" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">3</text>
+<rect x="565" y="48" width="140" height="80" rx="6" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="567" y="50" width="136" height="14" rx="3" fill="#EAF2FE"/>
+<rect x="577" y="78" width="100" height="6" rx="3" fill="#7FB2F0"/>
+<rect x="577" y="92" width="84" height="6" rx="3" fill="#7FB2F0"/>
+<rect x="577" y="106" width="46" height="16" rx="4" fill="#2563EB"/>
+<circle cx="683" cy="110" r="7" fill="#F59E0B"/>
+<text x="625" y="162" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="15" font-weight="bold" fill="#16324F">JavaScript 互动</text>
+
+<!-- 阶段 4：React 重构（第二排右） -->
+<rect x="520" y="220" width="210" height="150" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="542" cy="242" r="11" fill="#2563EB"/>
+<text x="542" y="247" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">4</text>
+<rect x="565" y="238" width="140" height="80" rx="6" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="567" y="240" width="136" height="14" rx="3" fill="#EAF2FE"/>
+<rect x="577" y="266" width="54" height="20" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="639" y="266" width="54" height="20" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="577" y="292" width="54" height="20" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="639" y="292" width="54" height="20" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="625" y="352" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="15" font-weight="bold" fill="#16324F">React 重构</text>
+
+<!-- 阶段 5：部署上线（第二排中） -->
+<rect x="275" y="220" width="210" height="150" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="297" cy="242" r="11" fill="#2563EB"/>
+<text x="297" y="247" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">5</text>
+<rect x="320" y="238" width="140" height="80" rx="6" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="322" y="240" width="136" height="14" rx="3" fill="#EAF2FE"/>
+<rect x="332" y="268" width="100" height="6" rx="3" fill="#7FB2F0"/>
+<rect x="332" y="284" width="84" height="6" rx="3" fill="#7FB2F0"/>
+<circle cx="438" cy="296" r="12" fill="#16A34A"/>
+<text x="438" y="301" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">✓</text>
+<text x="380" y="352" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="15" font-weight="bold" fill="#16324F">部署上线</text>
+
+<!-- 阶段 6：加后端留言（第二排左，橙色标重点） -->
+<rect x="30" y="220" width="210" height="150" rx="10" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
+<circle cx="52" cy="242" r="11" fill="#F59E0B"/>
+<text x="52" y="247" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">6</text>
+<rect x="75" y="238" width="140" height="80" rx="6" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="77" y="240" width="136" height="14" rx="3" fill="#EAF2FE"/>
+<rect x="87" y="266" width="64" height="22" rx="6" fill="#EAF2FE" stroke="#2563EB" stroke-width="2"/>
+<circle cx="101" cy="277" r="2.5" fill="#2563EB"/>
+<circle cx="115" cy="277" r="2.5" fill="#2563EB"/>
+<circle cx="129" cy="277" r="2.5" fill="#2563EB"/>
+<rect x="171" y="272" width="34" height="26" fill="#EAF2FE" stroke="#2563EB" stroke-width="2"/>
+<ellipse cx="188" cy="272" rx="17" ry="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+<text x="135" y="352" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="15" font-weight="bold" fill="#16324F">加后端留言</text>
+
+<!-- 串联箭头 -->
+<line x1="244" y1="105" x2="271" y2="105" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+<line x1="489" y1="105" x2="516" y2="105" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+<line x1="625" y1="184" x2="625" y2="216" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+<line x1="516" y1="295" x2="489" y2="295" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+<line x1="271" y1="295" x2="244" y2="295" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+</svg>

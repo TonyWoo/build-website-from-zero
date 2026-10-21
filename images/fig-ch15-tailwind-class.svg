@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360">
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+<g font-family="'Noto Sans SC',sans-serif">
+<text x="60" y="78" font-size="26" font-weight="bold" fill="#16324F">hover:bg-blue-500</text>
+<line x1="60" y1="92" x2="133" y2="92" stroke="#F59E0B" stroke-width="3"/>
+<line x1="144" y1="92" x2="291" y2="92" stroke="#2563EB" stroke-width="3"/>
+<text x="98" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#F59E0B">条件</text>
+<text x="98" y="144" text-anchor="middle" font-size="13" fill="#64748B">什么时候生效</text>
+<text x="218" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#2563EB">工具类</text>
+<text x="218" y="144" text-anchor="middle" font-size="13" fill="#64748B">决定用什么样式</text>
+<line x1="60" y1="168" x2="700" y2="168" stroke="#DBEAFE" stroke-width="2"/>
+<text x="60" y="215" font-size="26" font-weight="bold" fill="#16324F">sm:grid-cols-2</text>
+<line x1="60" y1="229" x2="97" y2="229" stroke="#F59E0B" stroke-width="3"/>
+<line x1="108" y1="229" x2="239" y2="229" stroke="#2563EB" stroke-width="3"/>
+<text x="79" y="257" text-anchor="middle" font-size="15" font-weight="bold" fill="#F59E0B">条件</text>
+<text x="79" y="279" text-anchor="middle" font-size="13" fill="#64748B">屏幕宽度够大时</text>
+<text x="173" y="257" text-anchor="middle" font-size="15" font-weight="bold" fill="#2563EB">工具类</text>
+<text x="173" y="279" text-anchor="middle" font-size="13" fill="#64748B">排成 2 列</text>
+<rect x="50" y="296" width="470" height="46" rx="10" fill="#EAF2FE"/>
+<text x="70" y="325" font-size="15" fill="#16324F"><tspan font-weight="bold" fill="#2563EB">p-4</tspan><tspan> = padding 16px</tspan><tspan fill="#64748B">（间距 1 档 = 4px，p-4 就是四档）</tspan></text>
+</g>
+</svg>

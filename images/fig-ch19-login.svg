@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 225">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+  <g font-family="'Noto Sans SC',sans-serif">
+    <rect x="20" y="45" width="160" height="76" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="100" y="90" font-size="15" fill="#16324F" text-anchor="middle">输入用户名密码</text>
+    <rect x="200" y="45" width="160" height="76" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="280" y="78" font-size="15" fill="#16324F" text-anchor="middle">后端取出盐</text>
+    <text x="280" y="102" font-size="15" fill="#16324F" text-anchor="middle">重新算哈希</text>
+    <rect x="380" y="45" width="160" height="76" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="460" y="78" font-size="15" fill="#16324F" text-anchor="middle">与库里哈希比对</text>
+    <text x="460" y="102" font-size="15" font-weight="700" fill="#16A34A" text-anchor="middle">一致 ✓</text>
+    <rect x="560" y="45" width="160" height="76" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="640" y="78" font-size="15" fill="#16324F" text-anchor="middle">发会话 Cookie</text>
+    <text x="640" y="102" font-size="15" fill="#16324F" text-anchor="middle">记住登录状态</text>
+    <path d="M182,83 L197,83" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M362,83 L377,83" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M542,83 L557,83" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <rect x="110" y="150" width="540" height="46" rx="10" fill="#EAF2FE" stroke="#7FB2F0" stroke-width="2.5"/>
+    <text x="380" y="179" font-size="13" fill="#16324F" text-anchor="middle">注册的区别：生成盐，只存「盐 : 哈希」，绝不存明文</text>
+  </g>
+</svg>

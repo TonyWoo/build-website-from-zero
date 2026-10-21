@@ -4,13 +4,30 @@
 // 由 `prebuild` 自动调用，保证构建永远用最新书稿
 // 输出 15 页：落地页 1 + 14 章（每章一页，含本章全部小节）
 // ============================================================
-import { readdirSync, readFileSync, writeFileSync, rmSync, mkdirSync, existsSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, rmSync, mkdirSync, existsSync, copyFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CONTENT_DIR = join(ROOT, '..', 'content', 'zh');
 const OUT_DIR = join(ROOT, 'src', 'content', 'docs');
+const IMAGES_DIR = join(ROOT, '..', 'images');
+const PUBLIC_IMAGES_DIR = join(ROOT, 'public', 'images');
+
+// 正文图片：仓库根 images/ → site/public/images/（public 映射到站点根，
+// 构建后位于 <base>/images/，与 fixImagePaths 改写的路径对应）
+function copyImages() {
+  if (!existsSync(IMAGES_DIR)) return;
+  mkdirSync(PUBLIC_IMAGES_DIR, { recursive: true });
+  let n = 0;
+  for (const f of readdirSync(IMAGES_DIR)) {
+    if (/\.(svg|png|jpe?g|webp|gif)$/i.test(f)) {
+      copyFileSync(join(IMAGES_DIR, f), join(PUBLIC_IMAGES_DIR, f));
+      n++;
+    }
+  }
+  console.log(`import-vibe: 拷贝图片 ${n} 张`);
+}
 
 // 站点 base 路径（astro.config.ts 里的 base: "..."），图片引用要带上它，
 // 否则部署到 GitHub Pages 项目路径下时图片 404
@@ -66,6 +83,7 @@ function frontmatter({ title, description, order, label, group }) {
 }
 
 function main() {
+  copyImages();
   rmSync(OUT_DIR, { recursive: true, force: true });
   mkdirSync(OUT_DIR, { recursive: true });
 

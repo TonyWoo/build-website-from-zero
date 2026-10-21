@@ -34,6 +34,8 @@ console.log("3. 我不等它，我也打印");
 
 ## 11.2 fetch：向服务器要数据
 
+![图：fetch 取数据的四步流程](/build-website-from-zero/images/fig-ch11-fetch.svg)
+
 网页向服务器要数据，用的工具叫 `fetch`（英文意思是"去取"）。因为要等网络，它天生是异步的。写法有几种，本书统一用最好懂的 `async / await`。先看最小例子，加到 `async.html` 里运行：
 
 ```javascript

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/></marker>
+<marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16A34A"/></marker>
+</defs>
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+<g font-family="'Noto Sans SC',sans-serif">
+<text x="48" y="168" font-size="15" font-weight="bold" fill="#16324F">参数（原料）</text>
+<text x="48" y="192" font-size="13" fill="#64748B">name =「小北」</text>
+<line x1="200" y1="178" x2="246" y2="178" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+<rect x="250" y="104" width="260" height="148" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="380" y="146" font-size="17" font-weight="bold" fill="#16324F" text-anchor="middle">greet(name)</text>
+<text x="380" y="180" font-size="15" fill="#16324F" text-anchor="middle">拼一句问候：</text>
+<text x="380" y="206" font-size="15" fill="#16324F" text-anchor="middle">'你好，' + name</text>
+<line x1="514" y1="178" x2="600" y2="178" stroke="#16A34A" stroke-width="2.5" fill="none" marker-end="url(#arg)"/>
+<text x="608" y="168" font-size="15" font-weight="bold" fill="#16A34A">返回值 return</text>
+<text x="608" y="196" font-size="15" fill="#16324F">'你好，小北'</text>
+<text x="380" y="282" font-size="13" fill="#64748B" text-anchor="middle">console.log 只是把结果打印出来，不等于 return</text>
+</g>
+</svg>

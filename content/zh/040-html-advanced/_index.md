@@ -115,6 +115,8 @@ title: "第 4 章 HTML 进阶：做一张完整的个人主页"
 
 ## 4.5 贯穿作品：小北的个人主页（纯 HTML 版）诞生
 
+![个人主页骨架：header、main、section、footer 在页面上的位置](../images/fig-ch04-anatomy.svg)
+
 零件都齐了，一次拼齐。先放文件：在项目文件夹里新建子文件夹 `images`，挑 3 张你的照片放进去，改名为 `photo1.jpg`、`photo2.jpg`、`photo3.jpg`；再打开第 3 章写的 `index.html`，整份换成下面这份完整代码：
 
 ```html

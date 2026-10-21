@@ -113,6 +113,8 @@ npm run dev
 
 ## 15.3 常用工具类：间距、颜色、字体与布局
 
+![图：Tailwind 类名里冒号前是条件、冒号后是工具类](/build-website-from-zero/images/fig-ch15-tailwind-class.svg)
+
 Tailwind 类名多到吓人，但日常高频的就几组。先讲清一个规律：**很多类名是"缩写 + 数字"，数字代表档位。** 间距以 4px 为一档：1 档 4px、2 档 8px、4 档 16px、8 档 32px。所以 `p-4` 是 16px 内边距，对上 15.1 表格里的 `px-4`、`py-2`。
 
 **间距组**（p 是 padding 内边距，m 是 margin 外边距）：

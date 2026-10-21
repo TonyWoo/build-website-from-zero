@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/></marker>
+<marker id="arrO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#F59E0B"/></marker>
+</defs>
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+<g font-family="'Noto Sans SC',sans-serif">
+<text x="505" y="60" text-anchor="middle" font-size="15" font-weight="bold" fill="#F59E0B">新分支 feature（branch）</text>
+<text x="55" y="126" font-size="17" font-weight="bold" fill="#16324F">main</text>
+<path d="M300,150 L435,85" stroke="#F59E0B" stroke-width="2.5" fill="none"/>
+<line x1="435" y1="85" x2="575" y2="85" stroke="#F59E0B" stroke-width="2.5"/>
+<path d="M575,85 L645,150" stroke="#F59E0B" stroke-width="2.5" fill="none" marker-end="url(#arrO)"/>
+<line x1="55" y1="150" x2="706" y2="150" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arr)"/>
+<circle cx="120" cy="150" r="13" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="300" cy="150" r="13" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="480" cy="150" r="13" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="435" cy="85" r="13" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
+<circle cx="575" cy="85" r="13" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
+<circle cx="645" cy="150" r="13" fill="#FFFFFF" stroke="#16A34A" stroke-width="2.5"/>
+<text x="120" y="192" text-anchor="middle" font-size="13" fill="#64748B">commit 存档点</text>
+<text x="645" y="192" text-anchor="middle" font-size="13" font-weight="bold" fill="#16A34A">merge 合并</text>
+<text x="380" y="238" text-anchor="middle" font-size="13" fill="#64748B">在分支上随便改，main 不受影响；改满意了再合并回来</text>
+</g>
+</svg>

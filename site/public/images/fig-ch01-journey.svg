@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280">
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/></marker>
+</defs>
+
+<!-- 步骤编号与箭头说明 -->
+<circle cx="190" cy="58" r="11" fill="#2563EB"/>
+<text x="190" y="63" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">1</text>
+<text x="190" y="88" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">问路：域名 → IP</text>
+<text x="380" y="88" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">带着 IP 找到它</text>
+<circle cx="570" cy="58" r="11" fill="#2563EB"/>
+<text x="570" y="63" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">2</text>
+<text x="570" y="88" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">发回 HTML、CSS、JS 文件</text>
+
+<!-- 盒子 1：浏览器 -->
+<rect x="15" y="105" width="160" height="130" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="95" y="152" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="17" font-weight="bold" fill="#16324F">浏览器</text>
+<text x="95" y="182" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">输入网址的地方</text>
+<text x="95" y="204" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">点开链接也一样</text>
+
+<!-- 盒子 2：DNS -->
+<rect x="205" y="105" width="160" height="130" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="285" y="152" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="17" font-weight="bold" fill="#16324F">DNS</text>
+<text x="285" y="182" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">域名 → IP 地址</text>
+<text x="285" y="204" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">像查电话簿</text>
+
+<!-- 盒子 3：服务器 -->
+<rect x="395" y="105" width="160" height="130" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="475" y="152" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="17" font-weight="bold" fill="#16324F">服务器</text>
+<text x="475" y="182" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">存放网站文件</text>
+<text x="475" y="204" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">一直开着的电脑</text>
+
+<!-- 盒子 4：渲染出的页面 -->
+<rect x="585" y="105" width="160" height="130" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="585" cy="105" r="12" fill="#16A34A"/>
+<text x="585" y="110" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">3</text>
+<text x="665" y="140" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="17" font-weight="bold" fill="#16324F">渲染出页面</text>
+<rect x="615" y="154" width="100" height="60" rx="4" fill="#FFFFFF" stroke="#7FB2F0" stroke-width="2"/>
+<rect x="617" y="156" width="96" height="12" rx="3" fill="#EAF2FE"/>
+<rect x="625" y="178" width="70" height="5" rx="2.5" fill="#7FB2F0"/>
+<rect x="625" y="192" width="52" height="5" rx="2.5" fill="#7FB2F0"/>
+
+<!-- 箭头 -->
+<line x1="179" y1="170" x2="201" y2="170" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+<line x1="369" y1="170" x2="391" y2="170" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+<line x1="559" y1="170" x2="581" y2="170" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+</svg>

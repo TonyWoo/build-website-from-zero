@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16A34A"/>
+    </marker>
+    <marker id="arrowO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#F59E0B"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+  <g font-family="'Noto Sans SC',sans-serif">
+    <rect x="25" y="50" width="150" height="60" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="100" y="88" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">你下任务</text>
+    <rect x="205" y="50" width="170" height="60" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="290" y="88" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">代理拆解步骤</text>
+    <rect x="405" y="50" width="150" height="60" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="480" y="88" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">动手改文件</text>
+    <rect x="585" y="50" width="150" height="60" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="660" y="88" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">你验收</text>
+    <path d="M177,80 L202,80" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M377,80 L402,80" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M557,80 L582,80" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M610,110 L610,175 L290,175 L290,114" stroke="#F59E0B" stroke-width="2.5" fill="none" marker-end="url(#arrowO)"/>
+    <text x="450" y="166" font-size="13" fill="#F59E0B" text-anchor="middle">不合格：Git 回滚，重新拆解</text>
+    <path d="M660,110 L660,211" stroke="#16A34A" stroke-width="2.5" fill="none" marker-end="url(#arrowG)"/>
+    <text x="674" y="166" font-size="13" fill="#16A34A">合格</text>
+    <rect x="585" y="215" width="150" height="56" rx="10" fill="#FFFFFF" stroke="#16A34A" stroke-width="2.5"/>
+    <text x="660" y="251" font-size="17" font-weight="700" fill="#16A34A" text-anchor="middle">完成 ✓</text>
+  </g>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+  <g font-family="'Noto Sans SC',sans-serif">
+    <rect x="30" y="30" width="320" height="58" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="52" y="67" font-size="15" fill="#16324F"><tspan font-size="17" font-weight="700">背景</tspan>：我在做什么</text>
+    <rect x="30" y="110" width="320" height="58" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="52" y="147" font-size="15" fill="#16324F"><tspan font-size="17" font-weight="700">目标</tspan>：想达到什么</text>
+    <rect x="30" y="190" width="320" height="58" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="52" y="227" font-size="15" fill="#16324F"><tspan font-size="17" font-weight="700">已尝试</tspan>：试过什么</text>
+    <rect x="30" y="270" width="320" height="58" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="52" y="307" font-size="15" fill="#16324F"><tspan font-size="17" font-weight="700">报错原文</tspan>：红字全贴</text>
+    <path d="M350,59 L474,168" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M350,139 L474,176" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M350,219 L474,184" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M350,299 L474,192" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <rect x="480" y="130" width="250" height="100" rx="10" fill="#EAF2FE" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="605" y="174" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">AI 给得出靠谱答案</text>
+    <text x="605" y="200" font-size="13" fill="#64748B" text-anchor="middle">四要素越全，答案越靠谱</text>
+  </g>
+</svg>

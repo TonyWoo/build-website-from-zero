@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16A34A"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+  <g font-family="'Noto Sans SC',sans-serif">
+    <rect x="15" y="120" width="180" height="100" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="105" y="164" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">浏览器</text>
+    <text x="105" y="190" font-size="13" fill="#64748B" text-anchor="middle">前端页面</text>
+    <rect x="290" y="120" width="180" height="100" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="380" y="164" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">Node.js 后端</text>
+    <text x="380" y="190" font-size="13" fill="#64748B" text-anchor="middle">server.js</text>
+    <rect x="565" y="120" width="180" height="100" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="655" y="158" font-size="17" font-weight="700" fill="#16324F" text-anchor="middle">PostgreSQL 数据库</text>
+    <text x="655" y="183" font-size="13" fill="#64748B" text-anchor="middle">两张表</text>
+    <text x="655" y="203" font-size="13" fill="#64748B" text-anchor="middle">users · messages</text>
+    <path d="M198,152 L287,152" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <text x="242" y="142" font-size="13" fill="#64748B" text-anchor="middle">fetch 请求</text>
+    <path d="M287,190 L198,190" stroke="#16A34A" stroke-width="2.5" fill="none" marker-end="url(#arrowG)"/>
+    <text x="242" y="208" font-size="13" fill="#16A34A" text-anchor="middle">JSON 回答</text>
+    <path d="M473,152 L562,152" stroke="#2563EB" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+    <text x="517" y="130" font-size="13" fill="#64748B" text-anchor="middle">SQL 查询</text>
+    <text x="517" y="146" font-size="13" fill="#64748B" text-anchor="middle">（参数化）</text>
+    <path d="M562,190 L473,190" stroke="#16A34A" stroke-width="2.5" fill="none" marker-end="url(#arrowG)"/>
+    <text x="517" y="208" font-size="13" fill="#16A34A" text-anchor="middle">返回结果</text>
+  </g>
+</svg>

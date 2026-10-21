@@ -1,6 +1,6 @@
 // ============================================================
 // prebuild.mjs —— 书稿导入（npm run build / dev 前自动执行）
-//   content/zh/（前言 + 18 章）→ src/content/docs/
+//   content/zh/（前言 + 19 章）→ src/content/docs/
 // ============================================================
 import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';

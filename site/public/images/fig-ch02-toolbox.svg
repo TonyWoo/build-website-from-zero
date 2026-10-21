@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440">
+<rect width="100%" height="100%" rx="16" fill="#F7FAFF"/>
+
+<!-- 连接线：四个工具都围着网站文件转 -->
+<line x1="286" y1="91" x2="324" y2="190" stroke="#7FB2F0" stroke-width="2.5" fill="none"/>
+<line x1="474" y1="91" x2="436" y2="190" stroke="#7FB2F0" stroke-width="2.5" fill="none"/>
+<line x1="286" y1="349" x2="324" y2="246" stroke="#7FB2F0" stroke-width="2.5" fill="none"/>
+<line x1="474" y1="349" x2="436" y2="246" stroke="#7FB2F0" stroke-width="2.5" fill="none"/>
+
+<!-- 中间：你的网站文件 -->
+<rect x="328" y="168" width="104" height="96" rx="8" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<rect x="330" y="170" width="100" height="16" rx="3" fill="#EAF2FE"/>
+<rect x="340" y="198" width="80" height="6" rx="3" fill="#7FB2F0"/>
+<rect x="340" y="214" width="60" height="6" rx="3" fill="#7FB2F0"/>
+<rect x="340" y="230" width="70" height="6" rx="3" fill="#7FB2F0"/>
+<text x="380" y="292" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="15" font-weight="bold" fill="#16324F">你的网站文件</text>
+
+<!-- VS Code -->
+<rect x="36" y="36" width="250" height="110" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="58" y="78" font-family="'Noto Sans SC',sans-serif" font-size="17" font-weight="bold" fill="#16324F">VS Code</text>
+<text x="58" y="104" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">写代码的编辑器</text>
+<text x="58" y="126" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">全书的代码都在这里敲</text>
+
+<!-- 浏览器 -->
+<rect x="474" y="36" width="250" height="110" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="496" y="78" font-family="'Noto Sans SC',sans-serif" font-size="17" font-weight="bold" fill="#16324F">浏览器</text>
+<text x="496" y="104" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">打开网页看效果</text>
+<text x="496" y="126" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">开发者工具帮你查问题</text>
+
+<!-- 终端 -->
+<rect x="36" y="294" width="250" height="110" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="58" y="336" font-family="'Noto Sans SC',sans-serif" font-size="17" font-weight="bold" fill="#16324F">终端</text>
+<text x="58" y="362" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">发命令的地方</text>
+<text x="58" y="384" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">让电脑照你说的做</text>
+
+<!-- Node.js -->
+<rect x="474" y="294" width="250" height="110" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.5"/>
+<text x="496" y="336" font-family="'Noto Sans SC',sans-serif" font-size="17" font-weight="bold" fill="#16324F">Node.js</text>
+<text x="496" y="362" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">运行 JavaScript 的环境</text>
+<text x="496" y="384" font-family="'Noto Sans SC',sans-serif" font-size="13" fill="#64748B">装工具、跑后端靠它</text>
+</svg>
